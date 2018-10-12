@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.xianlai.mypaging"
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+
+
+    implementation "com.squareup.retrofit2:retrofit:2.3.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.3.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:3.9.0"
+
+    kapt 'androidx.room:room-compiler:2.0.0'
+
+    implementation 'androidx.room:room-runtime:2.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.0.0'
+    implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
+//    implementation "androidx.lifecycle:lifecycle-common-java8:2.0.0"
+//    kapt "androidx.lifecycle:lifecycle-compiler:2.0.0"
+
+    implementation 'androidx.paging:paging-runtime:2.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+
+
+
+//    implementation deps.constraint_layout
+//    implementation deps.support.app_compat
+//    implementation deps.support.recyclerview
+//    implementation deps.support.cardview
+//    implementation deps.support.design
+//    implementation deps.room.runtime
+//    implementation deps.lifecycle.runtime
+//    implementation deps.lifecycle.extensions
+//    implementation deps.paging
+//    implementation deps.kotlin.stdlib
+//    implementation deps.retrofit.runtime
+//    implementation deps.retrofit.gson
+//    implementation deps.okhttp_logging_interceptor
+//    implementation deps.glide.runtime
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
